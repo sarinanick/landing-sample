@@ -1,0 +1,102 @@
+.pm-tooltip-root {
+  direction: rtl;
+  position: relative;
+  display: inline-flex;
+  width: fit-content;
+  font-family: var(--md-ref-typeface-plain);
+}
+
+.pm-tooltip {
+  position: absolute;
+  z-index: 140;
+  pointer-events: none;
+  inline-size: max-content;
+  max-inline-size: min(320px, calc(100vw - 32px));
+  border-radius: var(--md-sys-shape-corner-extra-small, 4px);
+  background: var(--md-sys-color-inverse-surface);
+  color: var(--md-sys-color-inverse-on-surface);
+  box-shadow: var(--md-sys-elevation-level2);
+  animation: pm-tooltip-enter 120ms ease;
+}
+
+.pm-tooltip--plain {
+  min-block-size: 24px;
+  padding-block: 4px;
+  padding-inline: 8px;
+  font-size: var(--md-sys-typescale-body-small-size, 12px);
+  line-height: var(--md-sys-typescale-body-small-line-height, 16px);
+  font-weight: var(--md-sys-typescale-body-small-weight, 400);
+}
+
+.pm-tooltip--rich {
+  pointer-events: auto;
+  min-inline-size: 220px;
+  padding: 16px;
+  border-radius: var(--md-sys-shape-corner-medium, 12px);
+  background: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
+  display: grid;
+  gap: 8px;
+}
+
+.pm-tooltip__title {
+  color: var(--md-sys-color-on-surface);
+  font-size: var(--md-sys-typescale-title-small-size, 14px);
+  line-height: var(--md-sys-typescale-title-small-line-height, 20px);
+  font-weight: var(--md-sys-typescale-title-small-weight, 500);
+}
+
+.pm-tooltip__content {
+  color: inherit;
+  font-size: var(--md-sys-typescale-body-small-size, 12px);
+  line-height: var(--md-sys-typescale-body-small-line-height, 16px);
+  font-weight: var(--md-sys-typescale-body-small-weight, 400);
+}
+
+.pm-tooltip--rich .pm-tooltip__content {
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: var(--md-sys-typescale-body-medium-size, 14px);
+  line-height: var(--md-sys-typescale-body-medium-line-height, 20px);
+}
+
+.pm-tooltip__action {
+  margin-block-start: 4px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Placement */
+.pm-tooltip--top {
+  inset-block-end: calc(100% + 8px);
+  inset-inline-start: 50%;
+  transform: translateX(50%);
+}
+
+.pm-tooltip--bottom {
+  inset-block-start: calc(100% + 8px);
+  inset-inline-start: 50%;
+  transform: translateX(50%);
+}
+
+.pm-tooltip--start {
+  inset-inline-end: calc(100% + 8px);
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+}
+
+.pm-tooltip--end {
+  inset-inline-start: calc(100% + 8px);
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+}
+
+@keyframes pm-tooltip-enter {
+  from {
+    opacity: 0;
+    transform: translateY(2px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+  }
+}

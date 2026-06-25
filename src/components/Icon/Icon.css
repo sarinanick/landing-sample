@@ -1,0 +1,32 @@
+.pm-icon {
+  direction: rtl;
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  line-height: 1;
+  font-family: var(--md-ref-typeface-plain);
+}
+
+.pm-icon--small {
+  inline-size: 18px;
+  block-size: 18px;
+  font-size: 18px;
+}
+
+.pm-icon--medium {
+  inline-size: 24px;
+  block-size: 24px;
+  font-size: 22px;
+}
+
+.pm-icon--large {
+  inline-size: 32px;
+  block-size: 32px;
+  font-size: 30px;
+}
+
+.pm-icon--xlarge {
+  inline-size: 40px;
+  block-size: 40px;
+  font-size: 38px;
+}

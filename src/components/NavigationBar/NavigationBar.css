@@ -1,0 +1,150 @@
+.pm-navigation-bar {
+  direction: rtl;
+  inline-size: 100%;
+  min-block-size: 80px;
+  background: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-ref-typeface-plain);
+  box-shadow: 0 -1px 0 color-mix(in srgb, var(--md-sys-color-outline-variant, var(--md-sys-color-outline)) 70%, transparent);
+}
+
+.pm-navigation-bar__items {
+  min-block-size: 80px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  align-items: center;
+  justify-content: stretch;
+  padding-inline: 8px;
+}
+
+.pm-navigation-bar__item {
+  min-inline-size: 64px;
+  min-block-size: 64px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-ref-typeface-plain);
+  cursor: pointer;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 4px;
+  position: relative;
+}
+
+.pm-navigation-bar__icon-container {
+  inline-size: 64px;
+  block-size: 32px;
+  display: inline-grid;
+  place-items: center;
+  position: relative;
+}
+
+.pm-navigation-bar__state-layer {
+  inline-size: 64px;
+  block-size: 32px;
+  border-radius: var(--md-sys-shape-corner-full);
+  display: inline-grid;
+  place-items: center;
+  position: relative;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.pm-navigation-bar__icon {
+  inline-size: 24px;
+  block-size: 24px;
+  display: inline-grid;
+  place-items: center;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.pm-navigation-bar__label {
+  color: currentColor;
+  font-size: var(--md-sys-typescale-label-medium-size, 12px);
+  line-height: var(--md-sys-typescale-label-medium-line-height, 16px);
+  font-weight: var(--md-sys-typescale-label-medium-weight, 500);
+  max-inline-size: 88px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pm-navigation-bar__badge {
+  position: absolute;
+  inset-block-start: -4px;
+  inset-inline-start: 35px;
+  min-inline-size: 16px;
+  block-size: 16px;
+  padding-inline: 4px;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-error);
+  color: var(--md-sys-color-on-error);
+  display: inline-grid;
+  place-items: center;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+/* Active */
+.pm-navigation-bar__item--active {
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.pm-navigation-bar__item--active .pm-navigation-bar__state-layer {
+  background: var(--md-sys-color-secondary-container);
+}
+
+/* Hover */
+.pm-navigation-bar__item:hover:not(:disabled) .pm-navigation-bar__state-layer {
+  background: color-mix(in srgb, var(--md-sys-color-on-surface-variant) 8%, transparent);
+}
+
+.pm-navigation-bar__item--active:hover:not(:disabled) .pm-navigation-bar__state-layer {
+  background:
+    linear-gradient(color-mix(in srgb, var(--md-sys-color-on-secondary-container) 8%, transparent), color-mix(in srgb, var(--md-sys-color-on-secondary-container) 8%, transparent)),
+    var(--md-sys-color-secondary-container);
+}
+
+/* Focus */
+.pm-navigation-bar__item:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--md-sys-color-primary) 60%, transparent);
+  outline-offset: -3px;
+  border-radius: var(--md-sys-shape-corner-medium);
+}
+
+/* Pressed */
+.pm-navigation-bar__item:active:not(:disabled) .pm-navigation-bar__state-layer {
+  background: color-mix(in srgb, var(--md-sys-color-on-surface-variant) 12%, transparent);
+}
+
+.pm-navigation-bar__item--active:active:not(:disabled) .pm-navigation-bar__state-layer {
+  background:
+    linear-gradient(color-mix(in srgb, var(--md-sys-color-on-secondary-container) 12%, transparent), color-mix(in srgb, var(--md-sys-color-on-secondary-container) 12%, transparent)),
+    var(--md-sys-color-secondary-container);
+}
+
+/* Disabled */
+.pm-navigation-bar__item:disabled,
+.pm-navigation-bar__item--disabled {
+  cursor: not-allowed;
+  color: color-mix(in srgb, var(--md-sys-color-on-surface) 38%, transparent);
+}
+
+.pm-navigation-bar__item:disabled .pm-navigation-bar__state-layer,
+.pm-navigation-bar__item--disabled .pm-navigation-bar__state-layer {
+  background: transparent;
+}
+
+/* Fixed helper */
+.pm-navigation-bar--fixed {
+  position: fixed;
+  inset-inline: 0;
+  inset-block-end: 0;
+  z-index: 20;
+}

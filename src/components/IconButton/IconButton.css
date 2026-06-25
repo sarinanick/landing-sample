@@ -1,0 +1,136 @@
+.pm-icon-button {
+  direction: rtl;
+  border: 0;
+  padding: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  display: inline-grid;
+  place-items: center;
+  cursor: pointer;
+  font-family: var(--md-ref-typeface-plain);
+  position: relative;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+.pm-icon-button--small {
+  inline-size: 40px;
+  block-size: 40px;
+}
+
+.pm-icon-button--medium {
+  inline-size: 48px;
+  block-size: 48px;
+}
+
+.pm-icon-button--large {
+  inline-size: 56px;
+  block-size: 56px;
+}
+
+.pm-icon-button__state-layer {
+  border-radius: inherit;
+  display: inline-grid;
+  place-items: center;
+  transition: background-color 160ms ease;
+}
+
+.pm-icon-button--small .pm-icon-button__state-layer {
+  inline-size: 32px;
+  block-size: 32px;
+}
+
+.pm-icon-button--medium .pm-icon-button__state-layer {
+  inline-size: 40px;
+  block-size: 40px;
+}
+
+.pm-icon-button--large .pm-icon-button__state-layer {
+  inline-size: 48px;
+  block-size: 48px;
+}
+
+.pm-icon-button__icon {
+  inline-size: 24px;
+  block-size: 24px;
+  display: inline-grid;
+  place-items: center;
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* Variants */
+.pm-icon-button--standard {
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.pm-icon-button--filled {
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+
+.pm-icon-button--tonal {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.pm-icon-button--outlined {
+  background: transparent;
+  border: 1px solid var(--md-sys-color-outline);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* Selected */
+.pm-icon-button--standard.pm-icon-button--selected {
+  color: var(--md-sys-color-primary);
+}
+
+.pm-icon-button--outlined.pm-icon-button--selected {
+  background: var(--md-sys-color-inverse-surface);
+  border-color: var(--md-sys-color-inverse-surface);
+  color: var(--md-sys-color-inverse-on-surface);
+}
+
+.pm-icon-button--filled.pm-icon-button--selected {
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+
+.pm-icon-button--tonal.pm-icon-button--selected {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+/* Hover */
+.pm-icon-button:hover:not(:disabled) .pm-icon-button__state-layer {
+  background: color-mix(in srgb, currentColor 8%, transparent);
+}
+
+/* Focus */
+.pm-icon-button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--md-sys-color-primary) 60%, transparent);
+  outline-offset: 2px;
+}
+
+/* Pressed */
+.pm-icon-button:active:not(:disabled) .pm-icon-button__state-layer {
+  background: color-mix(in srgb, currentColor 12%, transparent);
+}
+
+/* Disabled */
+.pm-icon-button:disabled {
+  cursor: not-allowed;
+  color: color-mix(in srgb, var(--md-sys-color-on-surface) 38%, transparent);
+  background: transparent;
+  border-color: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);
+}
+
+.pm-icon-button--filled:disabled,
+.pm-icon-button--tonal:disabled,
+.pm-icon-button--outlined.pm-icon-button--selected:disabled {
+  background: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);
+}

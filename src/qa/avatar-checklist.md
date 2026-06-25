@@ -1,0 +1,22 @@
+# Avatar QA Checklist
+
+- [ ] image avatar دارد.
+- [ ] initials fallback دارد.
+- [ ] icon fallback دارد.
+- [ ] xsmall size دارد.
+- [ ] small size دارد.
+- [ ] medium size دارد.
+- [ ] large size دارد.
+- [ ] xlarge size دارد.
+- [ ] circle shape دارد.
+- [ ] rounded shape دارد.
+- [ ] square shape دارد.
+- [ ] primary tone دارد.
+- [ ] secondary tone دارد.
+- [ ] tertiary tone دارد.
+- [ ] neutral tone دارد.
+- [ ] online status دارد.
+- [ ] busy status دارد.
+- [ ] away status دارد.
+- [ ] offline status دارد.
+- [ ] در RTL درست نمایش داده می‌شود.

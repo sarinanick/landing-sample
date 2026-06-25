@@ -1,0 +1,147 @@
+.pm-button {
+  border: 0;
+  min-width: 64px;
+  height: 40px;
+  border-radius: var(--md-sys-shape-corner-full);
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  font-family: var(--md-ref-typeface-plain);
+  font-size: var(--md-sys-typescale-label-large-size);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+
+.pm-button__state-layer {
+  height: 100%;
+  width: 100%;
+  min-height: 40px;
+  padding-block: 10px;
+  padding-inline: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: inherit;
+  position: relative;
+}
+
+.pm-button--with-icon .pm-button__state-layer {
+  padding-inline-start: 16px;
+  padding-inline-end: 24px;
+}
+
+.pm-button__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pm-button__icon {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Filled */
+.pm-button--filled {
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+
+.pm-button--filled:hover:not(:disabled) .pm-button__state-layer {
+  background: color-mix(in srgb, var(--md-sys-color-on-primary) 8%, transparent);
+}
+
+.pm-button--filled:active:not(:disabled) .pm-button__state-layer {
+  background: color-mix(in srgb, var(--md-sys-color-on-primary) 12%, transparent);
+}
+
+/* Outlined */
+.pm-button--outlined {
+  background: transparent;
+  color: var(--md-sys-color-primary);
+  border: 1px solid var(--md-sys-color-outline);
+}
+
+.pm-button--outlined:hover:not(:disabled) .pm-button__state-layer,
+.pm-button--outlined:active:not(:disabled) .pm-button__state-layer {
+  background: color-mix(in srgb, var(--md-sys-color-primary) 8%, transparent);
+}
+
+/* Text */
+.pm-button--text {
+  background: transparent;
+  color: var(--md-sys-color-primary);
+  min-width: 48px;
+}
+
+.pm-button--text:hover:not(:disabled) .pm-button__state-layer,
+.pm-button--text:active:not(:disabled) .pm-button__state-layer {
+  background: color-mix(in srgb, var(--md-sys-color-primary) 8%, transparent);
+}
+
+/* Elevated */
+.pm-button--elevated {
+  background: var(--md-sys-color-surface-container-low);
+  color: var(--md-sys-color-primary);
+  box-shadow: var(--md-sys-elevation-level1);
+}
+
+.pm-button--elevated:hover:not(:disabled) {
+  box-shadow: var(--md-sys-elevation-level2);
+}
+
+.pm-button--elevated:hover:not(:disabled) .pm-button__state-layer,
+.pm-button--elevated:active:not(:disabled) .pm-button__state-layer {
+  background: color-mix(in srgb, var(--md-sys-color-primary) 8%, transparent);
+}
+
+/* Tonal */
+.pm-button--tonal {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.pm-button--tonal:hover:not(:disabled) .pm-button__state-layer,
+.pm-button--tonal:active:not(:disabled) .pm-button__state-layer {
+  background: color-mix(in srgb, var(--md-sys-color-on-secondary-container) 8%, transparent);
+}
+
+/* Disabled */
+.pm-button:disabled {
+  cursor: not-allowed;
+  box-shadow: none;
+  color: color-mix(in srgb, var(--md-sys-color-on-surface) 38%, transparent);
+}
+
+.pm-button--filled:disabled,
+.pm-button--elevated:disabled,
+.pm-button--tonal:disabled {
+  background: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);
+}
+
+.pm-button--outlined:disabled {
+  border-color: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);
+  background: transparent;
+}
+
+.pm-button--text:disabled {
+  background: transparent;
+}

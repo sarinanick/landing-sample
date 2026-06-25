@@ -1,0 +1,101 @@
+.pm-segmented-button-group {
+  direction: rtl;
+  display: inline-flex;
+  align-items: stretch;
+  border-radius: var(--md-sys-shape-corner-full);
+  overflow: hidden;
+  font-family: var(--md-ref-typeface-plain);
+}
+
+.pm-segmented-button {
+  min-inline-size: 88px;
+  min-block-size: 40px;
+  border: 1px solid var(--md-sys-color-outline);
+  margin-inline-start: -1px;
+  padding: 0;
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-ref-typeface-plain);
+  cursor: pointer;
+  display: inline-grid;
+  place-items: stretch;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.pm-segmented-button:first-child {
+  margin-inline-start: 0;
+  border-start-end-radius: var(--md-sys-shape-corner-full);
+  border-end-end-radius: var(--md-sys-shape-corner-full);
+}
+
+.pm-segmented-button:last-child {
+  border-start-start-radius: var(--md-sys-shape-corner-full);
+  border-end-start-radius: var(--md-sys-shape-corner-full);
+}
+
+.pm-segmented-button-group--compact .pm-segmented-button {
+  min-block-size: 32px;
+  min-inline-size: 72px;
+}
+
+.pm-segmented-button__state-layer {
+  inline-size: 100%;
+  min-block-size: inherit;
+  padding-inline: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 160ms ease;
+}
+
+.pm-segmented-button-group--compact .pm-segmented-button__state-layer {
+  padding-inline: 12px;
+}
+
+.pm-segmented-button__label {
+  white-space: nowrap;
+  font-size: var(--md-sys-typescale-label-large-size, 14px);
+  line-height: var(--md-sys-typescale-label-large-line-height, 20px);
+  font-weight: var(--md-sys-typescale-label-large-weight, 500);
+}
+
+.pm-segmented-button__icon,
+.pm-segmented-button__check {
+  inline-size: 18px;
+  block-size: 18px;
+  display: inline-grid;
+  place-items: center;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.pm-segmented-button--selected {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.pm-segmented-button:hover:not(:disabled) .pm-segmented-button__state-layer {
+  background: color-mix(in srgb, currentColor 8%, transparent);
+}
+
+.pm-segmented-button:active:not(:disabled) .pm-segmented-button__state-layer {
+  background: color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.pm-segmented-button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--md-sys-color-primary) 60%, transparent);
+  outline-offset: -3px;
+  z-index: 1;
+}
+
+.pm-segmented-button:disabled,
+.pm-segmented-button--disabled {
+  cursor: not-allowed;
+  color: color-mix(in srgb, var(--md-sys-color-on-surface) 38%, transparent);
+  border-color: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);
+}
+
+.pm-segmented-button--disabled.pm-segmented-button--selected {
+  background: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);
+}

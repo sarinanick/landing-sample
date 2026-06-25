@@ -1,0 +1,23 @@
+/*
+  RTL-first rules:
+  در کل پروژه از left/right استفاده نکن مگر برای موارد واقعاً فیزیکی.
+  به‌جایش از inline-start / inline-end استفاده کن.
+*/
+
+[dir="rtl"] {
+  text-align: start;
+}
+
+.rtl-inline-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon-directional {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .ltr-only {
+  direction: ltr;
+  text-align: left;
+}

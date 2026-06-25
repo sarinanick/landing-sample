@@ -1,0 +1,27 @@
+# Mega Landing Page QA Checklist
+
+- [ ] فقط از کامپوننت‌های Design System استفاده شده است.
+- [ ] صفحه RTL است.
+- [ ] Hero section دارد.
+- [ ] SearchBar دارد.
+- [ ] Carousel hero دارد.
+- [ ] Carousel cards دارد.
+- [ ] Cardهای متعدد دارد.
+- [ ] Form section دارد.
+- [ ] DatePicker دارد.
+- [ ] TimePicker دارد.
+- [ ] Slider دارد.
+- [ ] Checkbox دارد.
+- [ ] Switch دارد.
+- [ ] Tabs دارد.
+- [ ] List دارد.
+- [ ] Avatar دارد.
+- [ ] Badge دارد.
+- [ ] Menu دارد.
+- [ ] Tooltip دارد.
+- [ ] BottomSheet دارد.
+- [ ] SideSheet دارد.
+- [ ] Snackbar دارد.
+- [ ] FAB دارد.
+- [ ] NavigationBar دارد.
+- [ ] responsive layout دارد.

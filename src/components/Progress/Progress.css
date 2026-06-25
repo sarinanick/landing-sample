@@ -1,0 +1,101 @@
+.pm-progress-field,
+.pm-circular-progress-field {
+  direction: rtl;
+  display: grid;
+  gap: 8px;
+  font-family: var(--md-ref-typeface-plain);
+  color: var(--md-sys-color-on-surface);
+}
+
+.pm-progress-field__label,
+.pm-circular-progress-field__label {
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: var(--md-sys-typescale-body-small-size, 12px);
+  line-height: var(--md-sys-typescale-body-small-line-height, 16px);
+}
+
+.pm-linear-progress {
+  position: relative;
+  inline-size: 100%;
+  block-size: 4px;
+  border-radius: var(--md-sys-shape-corner-full);
+  overflow: hidden;
+}
+
+.pm-linear-progress__track {
+  position: absolute;
+  inset: 0;
+  background: var(--md-sys-color-primary-container);
+}
+
+.pm-linear-progress__indicator {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  border-radius: inherit;
+  background: var(--md-sys-color-primary);
+  transition: inline-size 180ms ease;
+}
+
+.pm-linear-progress--secondary .pm-linear-progress__track { background: var(--md-sys-color-secondary-container); }
+.pm-linear-progress--secondary .pm-linear-progress__indicator { background: var(--md-sys-color-secondary); }
+.pm-linear-progress--error .pm-linear-progress__track { background: var(--md-sys-color-error-container); }
+.pm-linear-progress--error .pm-linear-progress__indicator { background: var(--md-sys-color-error); }
+
+.pm-linear-progress--indeterminate .pm-linear-progress__indicator {
+  inline-size: 40%;
+  animation: pm-linear-progress-indeterminate 1.1s infinite ease-in-out;
+}
+
+.pm-circular-progress {
+  display: inline-grid;
+  place-items: center;
+  color: var(--md-sys-color-primary);
+}
+
+.pm-circular-progress--small { inline-size: 32px; block-size: 32px; }
+.pm-circular-progress--medium { inline-size: 48px; block-size: 48px; }
+.pm-circular-progress--large { inline-size: 64px; block-size: 64px; }
+
+.pm-circular-progress__svg {
+  inline-size: 100%;
+  block-size: 100%;
+  transform: rotate(-90deg);
+}
+
+.pm-circular-progress__track,
+.pm-circular-progress__indicator {
+  fill: none;
+  stroke-width: 4;
+}
+
+.pm-circular-progress__track { stroke: var(--md-sys-color-primary-container); }
+.pm-circular-progress__indicator {
+  stroke: currentColor;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 180ms ease;
+}
+
+.pm-circular-progress--secondary { color: var(--md-sys-color-secondary); }
+.pm-circular-progress--secondary .pm-circular-progress__track { stroke: var(--md-sys-color-secondary-container); }
+.pm-circular-progress--error { color: var(--md-sys-color-error); }
+.pm-circular-progress--error .pm-circular-progress__track { stroke: var(--md-sys-color-error-container); }
+
+.pm-circular-progress--indeterminate .pm-circular-progress__svg {
+  animation: pm-circular-progress-spin 1.1s linear infinite;
+}
+
+.pm-circular-progress--indeterminate .pm-circular-progress__indicator {
+  stroke-dasharray: 80 160;
+  stroke-dashoffset: 0;
+}
+
+@keyframes pm-linear-progress-indeterminate {
+  0% { transform: translateX(100%); }
+  50% { transform: translateX(0%); }
+  100% { transform: translateX(-250%); }
+}
+
+@keyframes pm-circular-progress-spin {
+  to { transform: rotate(270deg); }
+}

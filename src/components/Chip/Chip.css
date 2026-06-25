@@ -1,0 +1,137 @@
+.pm-chip {
+  direction: rtl;
+  display: inline-flex;
+  align-items: center;
+  block-size: 32px;
+  border-radius: var(--md-sys-shape-corner-small);
+  font-family: var(--md-ref-typeface-plain);
+  color: var(--md-sys-color-on-surface-variant);
+  position: relative;
+  isolation: isolate;
+}
+
+.pm-chip__button,
+.pm-chip__remove {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  min-block-size: 32px;
+}
+
+.pm-chip__button {
+  block-size: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-block: 6px;
+  padding-inline: 16px;
+  border-radius: var(--md-sys-shape-corner-small);
+  border: 1px solid var(--md-sys-color-outline);
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: var(--md-sys-typescale-label-large-size);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.pm-chip__label {
+  white-space: nowrap;
+}
+
+.pm-chip__icon {
+  inline-size: 18px;
+  block-size: 18px;
+  display: inline-grid;
+  place-items: center;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.pm-chip__remove {
+  margin-inline-start: -8px;
+  margin-inline-end: 4px;
+  inline-size: 28px;
+  block-size: 28px;
+  border-radius: var(--md-sys-shape-corner-full);
+  display: inline-grid;
+  place-items: center;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Variants */
+.pm-chip--assist .pm-chip__button {
+  background: transparent;
+}
+
+.pm-chip--suggestion .pm-chip__button {
+  background: transparent;
+}
+
+.pm-chip--filter .pm-chip__button {
+  background: transparent;
+}
+
+.pm-chip--input .pm-chip__button {
+  padding-inline-end: 12px;
+}
+
+/* Selected filter chip */
+.pm-chip--filter.pm-chip--selected .pm-chip__button {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  border-color: transparent;
+}
+
+/* Hover */
+.pm-chip:not(.pm-chip--disabled) .pm-chip__button:hover,
+.pm-chip:not(.pm-chip--disabled) .pm-chip__remove:hover {
+  background: color-mix(in srgb, var(--md-sys-color-on-surface-variant) 8%, transparent);
+}
+
+.pm-chip--filter.pm-chip--selected:not(.pm-chip--disabled) .pm-chip__button:hover {
+  background:
+    linear-gradient(color-mix(in srgb, var(--md-sys-color-on-secondary-container) 8%, transparent), color-mix(in srgb, var(--md-sys-color-on-secondary-container) 8%, transparent)),
+    var(--md-sys-color-secondary-container);
+}
+
+/* Focus */
+.pm-chip__button:focus-visible,
+.pm-chip__remove:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--md-sys-color-primary) 60%, transparent);
+  outline-offset: 2px;
+}
+
+/* Pressed */
+.pm-chip:not(.pm-chip--disabled) .pm-chip__button:active,
+.pm-chip:not(.pm-chip--disabled) .pm-chip__remove:active {
+  background: color-mix(in srgb, var(--md-sys-color-on-surface-variant) 12%, transparent);
+}
+
+/* Disabled */
+.pm-chip--disabled {
+  color: color-mix(in srgb, var(--md-sys-color-on-surface) 38%, transparent);
+}
+
+.pm-chip--disabled .pm-chip__button {
+  cursor: not-allowed;
+  border-color: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);
+  color: color-mix(in srgb, var(--md-sys-color-on-surface) 38%, transparent);
+}
+
+.pm-chip--disabled.pm-chip--selected .pm-chip__button {
+  background: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);
+}
+
+.pm-chip--disabled .pm-chip__remove {
+  cursor: not-allowed;
+  color: color-mix(in srgb, var(--md-sys-color-on-surface) 38%, transparent);
+}

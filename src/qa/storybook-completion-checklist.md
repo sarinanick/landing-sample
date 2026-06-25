@@ -1,0 +1,22 @@
+# Storybook Completion QA Checklist
+
+- [ ] Story برای Switch ساخته شده است.
+- [ ] Story برای Checkbox ساخته شده است.
+- [ ] Story برای Radio ساخته شده است.
+- [ ] Story برای Chip ساخته شده است.
+- [ ] Story برای Tabs ساخته شده است.
+- [ ] Story برای TopAppBar ساخته شده است.
+- [ ] Story برای NavigationDrawer ساخته شده است.
+- [ ] Story برای List ساخته شده است.
+- [ ] Story برای Snackbar ساخته شده است.
+- [ ] Story برای Tooltip ساخته شده است.
+- [ ] Story برای Menu ساخته شده است.
+- [ ] Story برای FAB ساخته شده است.
+- [ ] Story برای Badge ساخته شده است.
+- [ ] Story برای Divider ساخته شده است.
+- [ ] Story برای Progress ساخته شده است.
+- [ ] Story برای Slider ساخته شده است.
+- [ ] Story برای SegmentedButton ساخته شده است.
+- [ ] Story برای Avatar ساخته شده است.
+- [ ] Story برای BottomSheet ساخته شده است.
+- [ ] Story برای SideSheet ساخته شده است.

@@ -1,0 +1,5 @@
+# Private registry example
+# Replace with your private registry if needed.
+
+# @ali:registry=https://npm.pkg.github.com
+# //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}

@@ -1,0 +1,1 @@
+export { MegaLandingPage } from "./MegaLandingPage";

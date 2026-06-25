@@ -1,0 +1,173 @@
+.pm-dialog-layer {
+  direction: rtl;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  font-family: var(--md-ref-typeface-plain);
+}
+
+.pm-dialog__scrim {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  background: color-mix(in srgb, var(--md-sys-color-scrim) 32%, transparent);
+  cursor: pointer;
+}
+
+.pm-dialog {
+  position: relative;
+  z-index: 1;
+  inline-size: min(100%, 560px);
+  max-block-size: min(80vh, 720px);
+  overflow: auto;
+  border-radius: var(--md-sys-shape-corner-extra-large, 28px);
+  background: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface);
+  box-shadow: var(--md-sys-elevation-level3);
+  padding: 24px;
+  display: grid;
+  justify-items: stretch;
+  animation: pm-dialog-enter 160ms ease;
+}
+
+.pm-dialog--small {
+  inline-size: min(100%, 360px);
+}
+
+.pm-dialog--medium {
+  inline-size: min(100%, 560px);
+}
+
+.pm-dialog--large {
+  inline-size: min(100%, 720px);
+}
+
+.pm-dialog__icon {
+  justify-self: center;
+  inline-size: 24px;
+  block-size: 24px;
+  margin-block-end: 16px;
+  display: inline-grid;
+  place-items: center;
+  color: var(--md-sys-color-secondary);
+  font-size: 24px;
+  line-height: 1;
+}
+
+.pm-dialog__title {
+  margin: 0;
+  color: var(--md-sys-color-on-surface);
+  font-size: var(--md-sys-typescale-headline-small-size, 24px);
+  line-height: var(--md-sys-typescale-headline-small-line-height, 32px);
+  font-weight: var(--md-sys-typescale-headline-small-weight, 400);
+}
+
+.pm-dialog__icon + .pm-dialog__title {
+  text-align: center;
+}
+
+.pm-dialog__supporting-text {
+  margin: 0;
+  margin-block-start: 16px;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: var(--md-sys-typescale-body-medium-size, 14px);
+  line-height: var(--md-sys-typescale-body-medium-line-height, 20px);
+  font-weight: var(--md-sys-typescale-body-medium-weight, 400);
+}
+
+.pm-dialog__content {
+  margin-block-start: 16px;
+  color: var(--md-sys-color-on-surface);
+  font-size: var(--md-sys-typescale-body-medium-size, 14px);
+  line-height: var(--md-sys-typescale-body-medium-line-height, 20px);
+}
+
+.pm-dialog__actions {
+  margin-block-start: 24px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pm-dialog__action {
+  min-inline-size: 64px;
+  min-block-size: 40px;
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  padding-block: 10px;
+  padding-inline: 24px;
+  font-family: var(--md-ref-typeface-plain);
+  font-size: var(--md-sys-typescale-label-large-size, 14px);
+  line-height: var(--md-sys-typescale-label-large-line-height, 20px);
+  font-weight: var(--md-sys-typescale-label-large-weight, 500);
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+.pm-dialog__action--text {
+  background: transparent;
+  color: var(--md-sys-color-primary);
+}
+
+.pm-dialog__action--outlined {
+  background: transparent;
+  color: var(--md-sys-color-primary);
+  border: 1px solid var(--md-sys-color-outline);
+}
+
+.pm-dialog__action--filled {
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+
+.pm-dialog__action:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--md-sys-color-primary) 8%, transparent);
+}
+
+.pm-dialog__action--filled:hover:not(:disabled) {
+  background:
+    linear-gradient(color-mix(in srgb, var(--md-sys-color-on-primary) 8%, transparent), color-mix(in srgb, var(--md-sys-color-on-primary) 8%, transparent)),
+    var(--md-sys-color-primary);
+}
+
+.pm-dialog__action:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--md-sys-color-primary) 60%, transparent);
+  outline-offset: 2px;
+}
+
+.pm-dialog__action:active:not(:disabled) {
+  background: color-mix(in srgb, var(--md-sys-color-primary) 12%, transparent);
+}
+
+.pm-dialog__action--filled:active:not(:disabled) {
+  background:
+    linear-gradient(color-mix(in srgb, var(--md-sys-color-on-primary) 12%, transparent), color-mix(in srgb, var(--md-sys-color-on-primary) 12%, transparent)),
+    var(--md-sys-color-primary);
+}
+
+.pm-dialog__action:disabled {
+  cursor: not-allowed;
+  color: color-mix(in srgb, var(--md-sys-color-on-surface) 38%, transparent);
+  background: transparent;
+  border-color: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);
+}
+
+@keyframes pm-dialog-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

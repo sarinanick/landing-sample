@@ -1,0 +1,180 @@
+.pm-switch-field {
+  direction: rtl;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-ref-typeface-plain);
+  cursor: pointer;
+  user-select: none;
+}
+
+.pm-switch-field--label-start {
+  flex-direction: row;
+}
+
+.pm-switch-field--label-end {
+  flex-direction: row-reverse;
+}
+
+.pm-switch-field__text {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.pm-switch-field__label {
+  color: var(--md-sys-color-on-surface);
+  font-size: var(--md-sys-typescale-body-large-size);
+  line-height: var(--md-sys-typescale-body-large-line-height);
+  font-weight: var(--md-sys-typescale-body-large-weight);
+}
+
+.pm-switch-field__supporting-text {
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  font-weight: var(--md-sys-typescale-body-small-weight);
+}
+
+.pm-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 52px;
+  block-size: 32px;
+  flex: 0 0 52px;
+}
+
+.pm-switch__input {
+  position: absolute;
+  opacity: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  margin: 0;
+  cursor: inherit;
+}
+
+.pm-switch__track {
+  inline-size: 52px;
+  block-size: 32px;
+  border-radius: var(--md-sys-shape-corner-full);
+  border: 2px solid var(--md-sys-color-outline);
+  background: var(--md-sys-color-surface-container-highest);
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    opacity 160ms ease;
+}
+
+.pm-switch__state-layer {
+  inline-size: 28px;
+  block-size: 28px;
+  border-radius: var(--md-sys-shape-corner-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease;
+}
+
+.pm-switch__handle {
+  inline-size: 16px;
+  block-size: 16px;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-outline);
+  color: var(--md-sys-color-surface-container-highest);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 1;
+  transition:
+    inline-size 160ms ease,
+    block-size 160ms ease,
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.pm-switch__icon {
+  display: none;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Selected */
+.pm-switch__input:checked + .pm-switch__track {
+  background: var(--md-sys-color-primary);
+  border-color: var(--md-sys-color-primary);
+}
+
+.pm-switch__input:checked + .pm-switch__track .pm-switch__state-layer {
+  transform: translateX(-20px);
+}
+
+.pm-switch__input:checked + .pm-switch__track .pm-switch__handle {
+  inline-size: 24px;
+  block-size: 24px;
+  background: var(--md-sys-color-on-primary);
+  color: var(--md-sys-color-primary);
+}
+
+.pm-switch__input:checked + .pm-switch__track .pm-switch__icon--selected {
+  display: inline;
+}
+
+/* Unselected icon can be used when handle is large in interactive states */
+.pm-switch__input:not(:checked) + .pm-switch__track .pm-switch__icon--unselected {
+  display: none;
+}
+
+/* Hover */
+.pm-switch-field:hover:not(.pm-switch-field--disabled) .pm-switch__state-layer {
+  background: color-mix(in srgb, var(--md-sys-color-on-surface) 8%, transparent);
+}
+
+.pm-switch-field:hover:not(.pm-switch-field--disabled) .pm-switch__input:checked + .pm-switch__track .pm-switch__state-layer {
+  background: color-mix(in srgb, var(--md-sys-color-on-primary) 8%, transparent);
+}
+
+/* Focus */
+.pm-switch__input:focus-visible + .pm-switch__track {
+  outline: 3px solid color-mix(in srgb, var(--md-sys-color-primary) 60%, transparent);
+  outline-offset: 2px;
+}
+
+/* Pressed */
+.pm-switch-field:active:not(.pm-switch-field--disabled) .pm-switch__handle {
+  inline-size: 28px;
+  block-size: 28px;
+}
+
+.pm-switch-field:active:not(.pm-switch-field--disabled) .pm-switch__state-layer {
+  background: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);
+}
+
+/* Disabled */
+.pm-switch-field--disabled {
+  cursor: not-allowed;
+}
+
+.pm-switch-field--disabled .pm-switch-field__label,
+.pm-switch-field--disabled .pm-switch-field__supporting-text {
+  color: color-mix(in srgb, var(--md-sys-color-on-surface) 38%, transparent);
+}
+
+.pm-switch-field--disabled .pm-switch__track {
+  opacity: 0.62;
+  background: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);
+  border-color: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);
+}
+
+.pm-switch-field--disabled .pm-switch__handle {
+  background: color-mix(in srgb, var(--md-sys-color-on-surface) 38%, transparent);
+}

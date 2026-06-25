@@ -1,0 +1,129 @@
+.mega-landing {
+  min-height: 100vh;
+  padding-block-end: 96px;
+  background:
+    radial-gradient(circle at 10% 0%, color-mix(in srgb, var(--md-sys-color-primary) 18%, transparent), transparent 34%),
+    radial-gradient(circle at 90% 16%, color-mix(in srgb, var(--md-sys-color-secondary) 18%, transparent), transparent 30%),
+    var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+}
+
+.mega-hero,
+.mega-section,
+.mega-grid,
+.mega-pricing {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.mega-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+  gap: 24px;
+  align-items: center;
+  padding-block: 56px 32px;
+}
+
+.mega-hero__content {
+  display: grid;
+  gap: 24px;
+}
+
+.mega-kicker,
+.mega-hero__actions,
+.mega-avatars {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.mega-hero h1 {
+  margin: 0;
+  font-size: clamp(34px, 6vw, 72px);
+  line-height: 1.08;
+  letter-spacing: -1.6px;
+  color: var(--md-sys-color-on-background);
+}
+
+.mega-hero p,
+.mega-section__header p,
+.mega-pricing p {
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.mega-status {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+  margin-block-start: 16px;
+}
+
+.mega-section {
+  display: grid;
+  gap: 20px;
+  padding-block: 32px;
+}
+
+.mega-section__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.mega-section h2 {
+  margin: 0;
+  font-size: 32px;
+  line-height: 42px;
+}
+
+.mega-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 24px;
+  padding-block: 32px;
+}
+
+.mega-stack {
+  display: grid;
+  gap: 16px;
+}
+
+.mega-picker-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: start;
+}
+
+.mega-pricing {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  padding-block: 32px;
+}
+
+.mega-fab {
+  position: fixed;
+  inset-inline-end: 24px;
+  inset-block-end: 104px;
+  z-index: 40;
+}
+
+@media (max-width: 860px) {
+  .mega-hero,
+  .mega-grid,
+  .mega-pricing {
+    grid-template-columns: 1fr;
+  }
+
+  .mega-hero {
+    padding-block-start: 32px;
+  }
+}
