@@ -72,7 +72,7 @@ export function MegaLandingPage() {
             <Chip variant="suggestion">Material-inspired</Chip>
           </div>
 
-          <h1>یک لندینگ‌پیج کامل، ساخته‌شده فقط با دیزاین سیستم خودمان</h1>
+          <h1>یک لندینگ‌پیج کامل، ساخته‌شده فقط با <em>دیزاین سیستم</em> خودمان</h1>
           <p>
             این صفحه برای فشار آوردن به سیستم طراحی ساخته شده: ناوبری، جستجو، کارت‌ها،
             فرم‌ها، فیلترها، جدول محتوایی، BottomSheet، SideSheet، Carousel، Pickerها،
@@ -129,7 +129,10 @@ export function MegaLandingPage() {
         </Card>
       </section>
 
+      <div className="mega-divider-accent" />
+
       <section className="mega-section">
+        <span className="mega-section-number">01</span>
         <div className="mega-section__header">
           <div>
             <h2>ویترین امکانات</h2>
@@ -144,6 +147,8 @@ export function MegaLandingPage() {
         <Carousel items={heroItems} variant="hero" ariaLabel="بنرهای اصلی لندینگ" />
         <Carousel items={featureItems} variant="cards" ariaLabel="ویژگی‌ها" />
       </section>
+
+      <div className="mega-divider-accent" />
 
       <section className="mega-grid">
         <Card variant="filled" title="فیلترهای سریع" subtitle="SegmentedButton، Checkbox، Switch و Slider">
@@ -172,7 +177,10 @@ export function MegaLandingPage() {
         </Card>
       </section>
 
+      <div className="mega-divider-accent" />
+
       <section className="mega-section">
+        <span className="mega-section-number">02</span>
         <Tabs defaultValue="components">
           <Tab value="components">کامپوننت‌ها</Tab>
           <Tab value="workflow">فرآیند</Tab>
@@ -210,7 +218,10 @@ export function MegaLandingPage() {
         </Tabs>
       </section>
 
+      <div className="mega-divider-accent" />
+
       <section className="mega-section mega-pricing">
+        <span className="mega-section-number">03</span>
         <Card variant="elevated" title="نسخه سریع" subtitle="برای کپی مستقیم در پروژه">
           <p>مناسب تست سریع صفحه‌های فارسی و prototype.</p>
           <Button variant="outlined">انتخاب</Button>
@@ -225,7 +236,10 @@ export function MegaLandingPage() {
         </Card>
       </section>
 
+      <div className="mega-divider-accent" />
+
       <section className="mega-section">
+        <span className="mega-section-number">04</span>
         <Card
           variant="filled"
           title="اکشن‌های نهایی"

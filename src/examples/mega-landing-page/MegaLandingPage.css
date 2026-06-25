@@ -1,49 +1,70 @@
+/* ─── Awwwards-inspired overrides ─── */
+
 .mega-landing {
   min-height: 100vh;
   padding-block-end: 96px;
-  background:
-    radial-gradient(circle at 10% 0%, color-mix(in srgb, var(--md-sys-color-primary) 18%, transparent), transparent 34%),
-    radial-gradient(circle at 90% 16%, color-mix(in srgb, var(--md-sys-color-secondary) 18%, transparent), transparent 30%),
-    var(--md-sys-color-background);
+  background: var(--md-sys-color-background);
   color: var(--md-sys-color-on-background);
+  font-family: var(--md-ref-typeface-plain);
 }
 
+/* ─── Accent bar (signature element) ─── */
+.mega-landing::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #c8ff00, transparent);
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* ─── Shared containers ─── */
 .mega-hero,
 .mega-section,
 .mega-grid,
 .mega-pricing {
-  width: min(1180px, calc(100% - 32px));
+  width: min(1200px, calc(100% - 48px));
   margin-inline: auto;
 }
 
+/* ─── Hero ─── */
 .mega-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
-  gap: 24px;
+  grid-template-columns: minmax(0, 1.4fr) minmax(340px, 0.6fr);
+  gap: 48px;
   align-items: center;
-  padding-block: 56px 32px;
+  padding-block: 80px 64px;
+  position: relative;
 }
 
 .mega-hero__content {
   display: grid;
-  gap: 24px;
+  gap: 28px;
 }
 
-.mega-kicker,
-.mega-hero__actions,
-.mega-avatars {
+.mega-kicker {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   flex-wrap: wrap;
   align-items: center;
 }
 
 .mega-hero h1 {
   margin: 0;
-  font-size: clamp(34px, 6vw, 72px);
-  line-height: 1.08;
-  letter-spacing: -1.6px;
+  font-family: var(--md-ref-typeface-brand);
+  font-size: clamp(36px, 5.5vw, 68px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
   color: var(--md-sys-color-on-background);
+}
+
+.mega-hero h1 em {
+  font-style: normal;
+  color: #c8ff00;
 }
 
 .mega-hero p,
@@ -52,47 +73,60 @@
   margin: 0;
   color: var(--md-sys-color-on-surface-variant);
   font-size: 16px;
-  line-height: 28px;
+  line-height: 1.7;
+  max-width: 540px;
+}
+
+.mega-hero__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .mega-status {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  gap: 20px;
+  gap: 24px;
   align-items: center;
   margin-block-start: 16px;
 }
 
+/* ─── Sections ─── */
 .mega-section {
   display: grid;
-  gap: 20px;
-  padding-block: 32px;
+  gap: 28px;
+  padding-block: 72px;
 }
 
 .mega-section__header {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  align-items: center;
+  align-items: flex-end;
   flex-wrap: wrap;
 }
 
-.mega-section h2 {
+.mega-section__header h2 {
   margin: 0;
-  font-size: 32px;
-  line-height: 42px;
+  font-family: var(--md-ref-typeface-brand);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
 }
 
+/* ─── Grid ─── */
 .mega-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   gap: 24px;
-  padding-block: 32px;
+  padding-block: 72px;
 }
 
 .mega-stack {
   display: grid;
-  gap: 16px;
+  gap: 20px;
 }
 
 .mega-picker-row {
@@ -102,20 +136,52 @@
   align-items: start;
 }
 
+/* ─── Pricing cards ─── */
 .mega-pricing {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  padding-block: 32px;
+  gap: 20px;
+  padding-block: 72px;
 }
 
+/* ─── Avatars row ─── */
+.mega-avatars {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-block-start: 16px;
+}
+
+/* ─── FAB ─── */
 .mega-fab {
   position: fixed;
-  inset-inline-end: 24px;
-  inset-block-end: 104px;
+  inset-inline-end: 28px;
+  inset-block-end: 108px;
   z-index: 40;
 }
 
+/* ─── Section number labels ─── */
+.mega-section-number {
+  font-family: var(--md-ref-typeface-brand);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #c8ff00;
+  margin-block-end: 8px;
+  display: block;
+}
+
+/* ─── Divider accents ─── */
+.mega-divider-accent {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #333, transparent);
+  border: none;
+  margin-block: 0;
+}
+
+/* ─── Responsive ─── */
 @media (max-width: 860px) {
   .mega-hero,
   .mega-grid,
@@ -124,6 +190,110 @@
   }
 
   .mega-hero {
-    padding-block-start: 32px;
+    padding-block-start: 48px;
+    gap: 32px;
   }
+
+  .mega-hero h1 {
+    font-size: clamp(28px, 8vw, 48px);
+  }
+}
+
+/* ─── Component overrides for dark theme ─── */
+
+/* Cards: subtle borders, no heavy fills */
+.mega-landing .pm-card {
+  border: 1px solid #222;
+  border-radius: 16px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mega-landing .pm-card:hover {
+  border-color: #333;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Buttons: acid accent on filled */
+.mega-landing .pm-button--filled {
+  background: #c8ff00;
+  color: #0a0a0a;
+  font-weight: 600;
+  border-radius: 100px;
+}
+
+.mega-landing .pm-button--filled:hover {
+  background: #d4ff33;
+}
+
+.mega-landing .pm-button--outlined {
+  border-color: #333;
+  color: var(--md-sys-color-on-surface);
+  border-radius: 100px;
+}
+
+.mega-landing .pm-button--outlined:hover {
+  border-color: #555;
+}
+
+/* Chips: ghost style */
+.mega-landing .pm-chip {
+  border-color: #2a2a2a;
+}
+
+/* SearchBar */
+.mega-landing .pm-search-bar {
+  border-radius: 100px;
+  background: #141414;
+  border: 1px solid #222;
+}
+
+/* Tabs */
+.mega-landing .pm-tabs__indicator {
+  background: #c8ff00;
+}
+
+/* Progress bars */
+.mega-landing .pm-linear-progress__track {
+  background: #1a1a1a;
+}
+
+/* Text fields */
+.mega-landing .pm-text-field--outlined .pm-text-field__control {
+  border-color: #333;
+}
+
+.mega-landing .pm-text-field--outlined .pm-text-field__control:hover {
+  border-color: #555;
+}
+
+/* NavigationBar */
+.mega-landing .pm-navigation-bar {
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid #1a1a1a;
+}
+
+/* TopAppBar */
+.mega-landing .pm-top-app-bar {
+  background: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Switch toggle accent */
+.mega-landing .pm-switch__thumb {
+  background: #c8ff00;
+}
+
+/* Checkbox accent */
+.mega-landing .pm-checkbox__checkmark {
+  background: #c8ff00;
+  color: #0a0a0a;
+}
+
+/* SegmentedButton active */
+.mega-landing .pm-segmented-button--selected {
+  background: rgba(200, 255, 0, 0.12);
+  color: #c8ff00;
 }
