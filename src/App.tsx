@@ -1,5 +1,5 @@
 import { MegaLandingPage } from "./examples/mega-landing-page";
-import "./styles/base.css";
+import "./index.css";
 
 export default function App() {
   return <MegaLandingPage />;

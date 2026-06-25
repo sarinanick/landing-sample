@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", "IRANSansX", sans-serif;
+  --font-body: "Inter", "IRANSansX", sans-serif;
+  --color-background: #09090b;
+  --color-foreground: #fafafa;
+  --color-card: #09090b;
+  --color-card-foreground: #fafafa;
+  --color-popover: #09090b;
+  --color-popover-foreground: #fafafa;
+  --color-primary: #c8ff00;
+  --color-primary-foreground: #09090b;
+  --color-secondary: #18181b;
+  --color-secondary-foreground: #fafafa;
+  --color-muted: #18181b;
+  --color-muted-foreground: #a1a1aa;
+  --color-accent: #18181b;
+  --color-accent-foreground: #fafafa;
+  --color-destructive: #ff5449;
+  --color-destructive-foreground: #fafafa;
+  --color-border: #27272a;
+  --color-input: #27272a;
+  --color-ring: #c8ff00;
+  --color-sidebar-background: #09090b;
+  --color-sidebar-foreground: #fafafa;
+  --color-sidebar-primary: #c8ff00;
+  --color-sidebar-primary-foreground: #09090b;
+  --color-sidebar-accent: #18181b;
+  --color-sidebar-accent-foreground: #fafafa;
+  --color-sidebar-border: #27272a;
+  --color-sidebar-ring: #c8ff00;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+    direction: rtl;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
